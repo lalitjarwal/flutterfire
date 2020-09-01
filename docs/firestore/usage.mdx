@@ -9,6 +9,38 @@ To start using the Cloud Firestore package within your project, import it at the
 import 'package:cloud_firestore/cloud_firestore.dart';
 ```
 
+## Note: <br>
+Enable Multidex before using cloud firestore-
+
+Open ``` project/app/build.gradle ``` and add the following lines.
+
+```
+defaultConfig {
+    ...
+
+    multiDexEnabled true
+}
+```
+and
+
+```
+dependencies {
+    ...
+
+    implementation 'com.android.support:multidex:1.0.3'
+}
+```
+
+If you have migrated to AndroidX, you'll want this instead :
+
+```
+dependencies {
+    ...
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+```
+<br>
 Before using Firestore, you must first have ensured you have [initialized FlutterFire](../overview.mdx#initializing-flutterfire).
 
 To create a new Firestore instance, call the [`instance`](!cloud_firestore.FirebaseFirestore.instance) getter on [`FirebaseFirestore`](!cloud_firestore.FirebaseFirestore):
